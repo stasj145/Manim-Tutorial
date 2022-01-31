@@ -14,7 +14,7 @@ Für dises Projekt wird die Community-Version von Manim verwendet welche [hier](
 ## 1. Manim installieren
 ### Windows - Chocolatey
 Die installation unter Windows ist am einfachsten über den "Chocolatey" package manager. Dieser kann über die Windows PowerShell installiert werden indem die folgenden Schritte durchgeführt werden: 
-1. PowerShell mit Administrator rechten starten
+1. PowerShell mit Administratorrechten starten
 2. Ausführen des folgenden Befehls: ```
    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) ```
 3. Mit ```choco -?``` überprüfen ob die installation funktioniert hat
