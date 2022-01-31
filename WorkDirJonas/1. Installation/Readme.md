@@ -3,7 +3,11 @@ Für dises Projekt wird die Community-Version von Manim verwendet welche [hier](
 
 
 **1. Manim installieren**
+
+
 **2. LaTeX installieren [optional - Empfohlen]**
+
+
 **3. Visiual Studio Code Plugin installieren [optional]**
 
 
