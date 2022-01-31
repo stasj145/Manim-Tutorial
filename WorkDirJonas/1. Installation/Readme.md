@@ -67,7 +67,7 @@ Für die Installation mit apt wird ```sudo apt-get install texlive-full ``` ausg
 ### Linux - Red Hat Linux - dnf
 Für die Installation mit dnf wird ```sudo dnf install texlive-scheme-full ``` ausgeführt.
 
-#3. Visiual Studio Code Plugin installieren [optional]
+# 3. Visiual Studio Code Plugin installieren [optional]
 Prinzipiell kann jeder belibige Code-Editor verwendet werden um Manim Programme zu schreiben. VS Code bietet gegenüber anderen Editoren den Vorteil das es eine sehr große Plugin-Community gibt. So gibt es aus ein Manim Plugin für VS Code. Das Plugin ermöglicht eine sehr einfache visualisierung des Programms indem automatische Manim ausgeführt wird und die ausgabe dierekt in VS Code angezeigt wird ohne den Editor verlassen zu müssen.
 
 
