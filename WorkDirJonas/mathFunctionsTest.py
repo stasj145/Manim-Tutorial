@@ -14,9 +14,10 @@ class mathFunctionTest(Scene):
         lineX = axes.get_vertical_line(axes.input_to_graph_point(3, graph))
         lineY = axes.get_horizontal_line(axes.input_to_graph_point(3, graph))
 
-        dot = Dot()
+        dot = Dot() 
         dot.move_to(axes.input_to_graph_point(0, graph))
         dot.set_color(RED)
 
         self.add(axes, graph, lineX, lineY, dot)
         self.play(MoveAlongPath(dot, graph), run_time=10)
+
