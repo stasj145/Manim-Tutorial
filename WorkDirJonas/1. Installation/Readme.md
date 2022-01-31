@@ -17,7 +17,7 @@ Die installation unter Windows ist am einfachsten über den "Chocolatey" package
 
 Nachdem Chocolatey installiert wurde, kann Manim mit allen benötigten abhängigkeiten mit dem Befehl ```choco install manimce```  Installiert werden.
 
-**Windows - manuell**
+<u>**Windows - manuell**</u>
 Eine Manuelle installation von Manim ist ebenfalls möglich. Dies ist allerdings etwas aufwendiger. Der ablauf sieht wie folgt aus:
 1. Python installieren. Manim setzt Python 3.7-3.9 vorraus, andere Versionen von Python sind nicht mit Manim Kompatibel. Python kann auf https://www.python.org/downloads/ herruntergeladen werden.
 2. FFmpeg installieren.
