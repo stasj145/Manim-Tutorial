@@ -32,7 +32,7 @@ Eine Manuelle installation von Manim ist ebenfalls möglich. Dies ist allerdings
 3. Manim über pip mit folgendem Befehl installieren: ```python -m pip install manim```
 4. In einem neuen Terminal überprüfen ob ```manim``` akzeptiert wird.
 
-Es ist möglich das ```manim``` trotz korrekter installation nicht akzeptiert wird, dann wurde Python vermutlich nicht korekkt eingerichtet und es ist nötig den manim Installtionsordner zu finden und ebenfalls zum PATH hinzuzufügen. 
+Es ist möglich das ```manim``` trotz korrekter Installation nicht akzeptiert wird, dann wurde Python vermutlich nicht korekkt eingerichtet und es ist nötig den manim Installtionsordner zu finden und ebenfalls zum PATH hinzuzufügen. 
 
 ### Linux - Debian - apt
 Für die installation unter Debian und allen darauf aufbauenen Distributionen (z.B. Ubuntu) werden die folgenden Befehle ausgeführt:
