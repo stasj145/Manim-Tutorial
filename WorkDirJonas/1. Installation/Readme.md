@@ -65,13 +65,23 @@ Für die Installation mit dnf wird ```sudo dnf install texlive-scheme-full ``` a
 
 #3. Visiual Studio Code Plugin installieren [optional]
 Prinzipiell kann jeder belibige Code-Editor verwendet werden um Manim Programme zu schreiben. VS Code bietet gegenüber anderen Editoren den Vorteil das es eine sehr große Plugin-Community gibt. So gibt es aus ein Manim Plugin für VS Code. Das Plugin ermöglicht eine sehr einfache visualisierung des Programms indem automatische Manim ausgeführt wird und die ausgabe dierekt in VS Code angezeigt wird ohne den Editor verlassen zu müssen.
+
+
 ![VSCodePluginExample](mediaFiles/VSCodePluginExample.png)
+
+
 Außerdem bietet das Plugin die Möglichkeit verschiedenen Elemente auszuwählen und die entsprechenden Codeteile einzufügen, was hilfreich sein kann wenn man Manim erstmalig kennenlernt.
+
+
 ![VSCodePluginExampleGallery](mediaFiles/VSCodePluginExampleGallery.png)
 
 **Installation**
 Zur Installation des Plugins wird im VS Code Extension Menü nach "Manim" gesucht und die Erweiterung "Manim Sideview" ausgefählt.
+
+
 ![VSCodePluginSuche](mediaFiles/VSCodePluginSuche.png)
+
+
 Wurde das Plugin gefunden wird es mit einem Klick auf "install" installiert.
 
 **Einrichtung**
