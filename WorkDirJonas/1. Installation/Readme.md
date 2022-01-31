@@ -12,7 +12,7 @@ Für dises Projekt wird die Community-Version von Manim verwendet welche [hier](
 
 
 ## 1. Manim installieren
-**Windows - Chocolatey**
+###Windows - Chocolatey
 Die installation unter Windows ist am einfachsten über den "Chocolatey" package manager. Dieser kann über die Windows PowerShell installiert werden indem die folgenden Schritte durchgeführt werden: 
 1. PowerShell mit Administrator rechten starten
 2. Ausführen des folgenden Befehls: ```
@@ -21,7 +21,7 @@ Die installation unter Windows ist am einfachsten über den "Chocolatey" package
 
 Nachdem Chocolatey installiert wurde, kann Manim mit allen benötigten abhängigkeiten mit dem Befehl ```choco install manimce```  Installiert werden.
 
-<u>**Windows - manuell**</u>
+###Windows - manuell>
 Eine Manuelle installation von Manim ist ebenfalls möglich. Dies ist allerdings etwas aufwendiger. Der ablauf sieht wie folgt aus:
 1. Python installieren. Manim setzt Python 3.7-3.9 vorraus, andere Versionen von Python sind nicht mit Manim Kompatibel. Python kann auf https://www.python.org/downloads/ herruntergeladen werden.
 2. FFmpeg installieren.
