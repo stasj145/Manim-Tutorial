@@ -195,6 +195,7 @@ self.play(self.camera.frame.animate.set(width=plane.width*2))
 #Kamera zurücksetzen
 self.play(Restore(self.camera.frame))
 ```
+Der Vollständige Code findet sich in der Datei "2dFunctionWithPlane.py".
 
 ## 3. Abbilden von dreidimensionalen Funktionen
 Auch dreidimensionalen Funktionen können Problemlos mit Manim dargestellt werden. Der Ablauf unterscheidet sich dabei nur kaum von der Visualisierung zweidimensionaler Funktionen.
@@ -248,4 +249,4 @@ Zur besseren Darstellung wird die Obefläsche außerdem mit ```fill_opacity=0.5`
 
 ![3dImage3](mediaFiles/3d3.png)
 
-Wie zu sehen ist, ist auch die Darstellung von dreidimensionalen Funktionen nicht schwierig und kann problemlos mit wenigen Codezeilen umgesetzt werden. 
+Wie zu sehen ist, ist auch die Darstellung von dreidimensionalen Funktionen nicht schwierig und kann problemlos mit wenigen Codezeilen umgesetzt werden. Der komplete Code zum Vergleich ist in der Datei "3dFunction.py" zu finden.
