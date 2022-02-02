@@ -1,4 +1,4 @@
-#Funktionen darstellen
+# Funktionen darstellen
 Die möglichkeit mathematische Funktionen darzustellen ist ein wichtige bestantteil von Manim. Dementsprechend stehen eine vielzahl an Möglichkeiten zur verfügung alle möglichen Funktionen zu visualisieren. Dabei unterscheidet sich die darstallung von Funktionen von den Klassischen visualisierungen in Manim da hier vorallem auch die entsprechenden Funktionen definiert werden müssen. 
 
 In diesem Teil des Tutorials soll Manim's möglichkeiten zu visualiesierung von Funktionen dargestellt werden. Dabei werden im speziellen drei Dinge besprochen:
