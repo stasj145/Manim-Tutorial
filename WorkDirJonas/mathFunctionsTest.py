@@ -1,4 +1,3 @@
-from pdb import line_prefix
 from manim import *
 
 class mathFunctionTest(Scene):
