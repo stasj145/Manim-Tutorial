@@ -8,7 +8,7 @@ In diesem Teil des Tutorials soll Manim's möglichkeiten zu visualiesierung von 
 
 Mithilfe dieser drei Teile sollte es möglich sein die meisten Projekte umzusetzen die auf der darstellung von Funktionen basieren.
 
-##1. Visualisierung von zweidimensionalen Funktionen in einem einfachen Koordinatensystem
+## 1. Visualisierung von zweidimensionalen Funktionen in einem einfachen Koordinatensystem
 In diesem Teil des Tutorials werden die Grundlagen für das Arbeiten mit Funktionen dargestellt. Dabei werden folgende bereiche behandelt:
 - erstellung eines Koordinatensystems
 - darstellung einer Funktion
