@@ -204,6 +204,8 @@ Das sieht schon ganz gut aus lässt sich aber noch verbessern. Es gibt zwei Prob
 1. Das Bild ist etwas wirr da die Linien nicht am gleichen Punkt eines Kreises anfangen und aufhören.
 2. Wir haben keinen Zugriff mehr auf die einzelnen Linien.
 
+Im übrigen empfiehlt es sich ab hier eine möglichst hohe Render-Auflösung zu wählen da es bei geringen Auflösungen zu einem starken Staircase-Effekt bei den Linien kommt. Die hier gezeigten Bilder und Videos wurden in 3840x2160 erstellt. Dass kann zum Beispiel mit dem CLI Flag ```-qk``` erreicht werden.
+
 Zur Lösung des ersten Problems kann die Funktion ```point_at_angle(angle)``` eines Kreises verwendet werden um einen speziellen Startpunkt/Endpunkt für die Linien zu finden. Die Implementierung wäre dann folgendes:
 
 ```python
