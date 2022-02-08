@@ -74,8 +74,8 @@ class knn(Scene):
 
 
         #line color change
-        def animateLineColor (lineNumber, divisor1, divisor2, array, color):
-            for node in lineArray[lineNumber]:
+        def animateLineColor (nodeArray, divisor1, divisor2, array, color):
+            for node in nodeArray:
                 for i in range(len(node)):
                     if i % divisor1 == 0:
                         array.append(ShowPassingFlash(node[i].copy().set_color(color), run_time=2, time_width=1))
@@ -87,15 +87,13 @@ class knn(Scene):
         lineAnimationsSecondRow = []
         lineAnimationsThirdRow = []
 
-        animateLineColor(0, 2, 3, lineAnimationsFirstRow, RED)
-        animateLineColor(1, 3, 5, lineAnimationsSecondRow, RED)
-        animateLineColor(2, 4, 6, lineAnimationsThirdRow, RED)
+        animateLineColor(lineArray[0], 2, 3, lineAnimationsFirstRow, RED)
+        animateLineColor(lineArray[1], 3, 5, lineAnimationsSecondRow, RED)
+        animateLineColor(lineArray[2], 4, 6, lineAnimationsThirdRow, RED)
 
 
         #node color change
-
-        def animateNodeColor (lineNumber, divisor1, divisor2, array, color):
-            row = rowArray[lineNumber]
+        def animateNodeColor (row, divisor1, divisor2, array, color):
             for i in range(len(row)):
                 if i % divisor1 == 0:
                     array.append(row[i].animate(run_time=2).set_fill(color, 0.7))
@@ -107,9 +105,9 @@ class knn(Scene):
         nodeAnimationThirdRow = []
         nodeAnimationFourthRow = rowArray[3][6].animate(run_time=2).set_fill(RED, 0.7)
 
-        animateNodeColor(0, 2, 3, nodeAnimationFirstRow, RED)
-        animateNodeColor(1, 3, 5, nodeAnimationSecondRow, RED)
-        animateNodeColor(2, 4, 6, nodeAnimationThirdRow, RED)
+        animateNodeColor(rowArray[0], 2, 3, nodeAnimationFirstRow, RED)
+        animateNodeColor(rowArray[1], 3, 5, nodeAnimationSecondRow, RED)
+        animateNodeColor(rowArray[2], 4, 6, nodeAnimationThirdRow, RED)
 
 
         numberTextArray = []
@@ -120,6 +118,7 @@ class knn(Scene):
             self.add(text)
             numberTextArray.append(text)
 
+        #add brace
         brace = Brace(rowGroups[0], LEFT)
         braceText = brace.get_text("784")
 
