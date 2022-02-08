@@ -336,3 +336,38 @@ Die fertige Animation sieht dann so aus:
 https://user-images.githubusercontent.com/50620058/153039740-a005f9ba-0ce0-4579-8bd6-59b7e1575c25.mp4
 
 ## 4. Einfügen von Details (Klammer, Beschriftung, hervorhebung)
+
+Das Video ist nun fast Fertig. Es Fehlen nur noch ein Paar Details. In diesem letzten Schritt wird nun noch die Klammer, die Beschriftung und die Hervorhebung des Output-Knoten eingefügt.
+
+Zuerst wird die Klammer für die erste Schicht erstellt. Das ist sehr einfach und kann mit ```Brace(object, orientation)``` durchgeführt werden. Um einen Text hinzuzufügen stellt die ```Brace``` Klasse die Methode ```get_text(text)``` zur verfügung. Zusammen sieht das dann so aus:
+
+```python
+brace = Brace(rowGroups[0], LEFT)
+braceText = brace.get_text("784")
+
+self.add(brace, braceText)
+```
+
+Nachdem nun die Klammer erzeugt wurde gilt es jetzt die Output-Knoten zu beschriften. Dafür wird mit ```Text()``` für jeden Knoten der letzten Schicht ein Text erstellt und dann rechts neben dem jeweiligen Knoten angeordnet. Außerdem werden die Texte wieder wie zuvor einem Array hinzugefügt um auf sie weiter Zugriff zu haben.
+
+```python
+numberTextArray = []
+
+for i in range(len(rowArray[3])):
+    text = Text(str(i), font_size=15)
+    text.next_to(rowArray[3][i], RIGHT)
+    self.add(text)
+    numberTextArray.append(text)
+```
+
+Jetzt bleibt nur noch eine einzige Sache übrig: das hervorheben des Output-Knoten. Eine solche Hervorhebung kann mit ```Circumscribe(object)``` durchgeführt werden. Dabei macht es Sinn auch wieder die Eigenschaften ```time_width``` und ```run_time``` festzulegen. Da der Knotenpunkt zusammen mit der dazugehörigen Beschriftung hervorgehoben werden soll wird hier wieder eine VGroup verwendet:
+
+```python
+self.play(Circumscribe(VGroup(rowArray[3][6], numberTextArray[6]), time_width=5, run_time=5))
+```
+
+Damit wurden nun auch die Details hinzugefügt und das Video ist Komplett:
+
+[VIDEO]
+
+Wie zu sehen ist, ist es mit Manim gut möglich auch Komplexere Szenen zu erstellen. Die einzelnen Bausteine sind einfach zu verwenden und lassen sich leich zu größeren Szenen kombinieren.
