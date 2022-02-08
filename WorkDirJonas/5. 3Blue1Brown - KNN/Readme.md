@@ -297,7 +297,8 @@ self.play(nodeAnimationFourthRow)
 
 Es gilt darauf zu Achten das hier der ```*``` Operator verwendet wird um die Arrays zu entpacken. Damit ergibt sich nun folgende Animation:
 
-[VIDEO]
+https://user-images.githubusercontent.com/50620058/153039693-d7dbd714-51b7-4a7e-9a57-2b4f16689cd8.mp4
+
 
 Als nächstes müsssen noch die Kanten animiert werden. Dies läuft grundlegend sehr ähnlich ab wie zuvor bei den Knoten, allerdings wird für das Erzeugen der eigentlichen Animation eine andere Funktion verwendet. Mithilfe von ```ShowPassingFlash(object, run_time, time_width)``` kann eine Animation erstellt werden die nur einen Teil eines Objekts auf einmal zeigt. Das bedeutet das eigentlich nicht die bereits exestierenden Linien animiert werden, sondern jeweils eine neue Linie über den alten Linien erzeugt wird die aber immer nur teilweise zu sehen ist. Dazu können die Linien-Objekte mit ```.copy()``` kopiert werden und dann die Kopien in ```ShowPassingFlash(object, run_time, time_width)``` verwendet werden um die Animationen zu erzeugen. Das könnte dann beispielsweise so aussehen: ```animation = ShowPassingFlash(line.copy().set_color(RED), run_time=2, time_width=1)```. Neben dieser Veränderung funktioniert der Rest wieder genauso wie zuvor:
 
@@ -332,6 +333,6 @@ self.play(*lineAnimationsThirdRow, nodeAnimationFourthRow)
 
 Die fertige Animation sieht dann so aus:
 
-[VIDEO]
+https://user-images.githubusercontent.com/50620058/153039740-a005f9ba-0ce0-4579-8bd6-59b7e1575c25.mp4
 
 ## 4. Einfügen von Details (Klammer, Beschriftung, hervorhebung)
