@@ -368,6 +368,6 @@ self.play(Circumscribe(VGroup(rowArray[3][6], numberTextArray[6]), time_width=5,
 
 Damit wurden nun auch die Details hinzugefügt und das Video ist Komplett:
 
-[VIDEO]
+https://user-images.githubusercontent.com/50620058/152992613-4eec1536-6a23-4994-9444-9d7e46e7034d.mp4
 
 Wie zu sehen ist, ist es mit Manim gut möglich auch Komplexere Szenen zu erstellen. Die einzelnen Bausteine sind einfach zu verwenden und lassen sich leich zu größeren Szenen kombinieren.
