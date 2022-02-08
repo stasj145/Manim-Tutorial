@@ -1,5 +1,3 @@
-from tkinter import CENTER
-from numpy import number, spacing
 from manim import *
 
 class knn(Scene):
@@ -12,6 +10,7 @@ class knn(Scene):
         circleStrokeWidth = 2
         circleCollor = BLUE
 
+        #Create nodes
         rowArray = []
         rowGroups = []
         
@@ -21,10 +20,10 @@ class knn(Scene):
 
             for i in range(nodesInRows[row]):
                 newCircle = Circle(stroke_color=circleCollor, stroke_width=circleStrokeWidth, radius=circleRadius)
+                newCircle.shift(DOWN*i*spacingMultiplier)
+                self.add(newCircle)
                 circleArray.append(newCircle)
                 group.add(newCircle)
-                circleArray[i].shift(DOWN*i*spacingMultiplier)
-                self.add(circleArray[i])
             
             rowArray.append(circleArray)
             rowGroups.append(group)
