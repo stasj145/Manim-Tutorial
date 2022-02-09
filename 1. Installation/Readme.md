@@ -97,3 +97,5 @@ output_file = meineScene
 manim-sideview.videoDirectory = .\media\videos\{module_name}\1080p60
 manim-sideview.commandLineArgs = -qh
 ```
+
+Um die MObject Gallery aufzurufen muss die VS-Code Komandozeile aufgerufen werden (Standardmäßig mit ctrl + shift + p) und der Befehl "Show MObject Gallery For Manim" ausgeführt werden.
