@@ -44,7 +44,7 @@ Aber wie genau wird aus dem Code nun ein Bild oder Video erzeugt? Um den Render-
 - Video: .\media\videos\\[NameDerSzene]\\[Auflösung]\ - in diesem Fall zum Beispiel: .\media\videos\basics\480p15\basic.mp4
 - Bild: .\\media\images\\[NameDerSzene]\ - in diesem Fall zum Beispiel: .\media\images\basics\basic_ManimCE_v0.14.0.png
 
-Verschiedene Aspekte des Renderprozesses können mithilfe von CLI Flags angepasst werden. Eine vollständige List aller möglichen Flags findet sich [hier](https://docs.manim.community/en/stable/tutorials/configuration.html). Einige wichtige CLI Flags sind folgdene:
+Verschiedene Aspekte des Renderprozesses können mithilfe von CLI Flags angepasst werden. Eine vollständige Liste aller möglichen Flags findet sich [hier](https://docs.manim.community/en/stable/tutorials/configuration.html). Einige wichtige CLI Flags sind folgdene:
 
 - ```--format``` - mögliche Optionen: png, gif, mp4, webm, mov
 - ```-q```, ```--quality``` - mögliche Optionen: 
