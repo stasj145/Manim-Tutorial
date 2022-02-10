@@ -64,6 +64,7 @@ Nachdem nun eine erste eigenen Szene erstellt wurde gibt es noch einige weitere 
 - Positionierung von Objekten
 
 Ziel ist die folgende Szene:
+
 ![fullSceneTwo](./mediaFiles/fullSceneTwo.png)
 
 
@@ -90,6 +91,7 @@ class basic(Scene):
 Die Klasse ```Circle()``` erbt von ```VMobject()``` und stellt damit unter anderem die Methoden ```set_color(color)``` und ```set_fill(color, opacity)``` zur verfügung. ```set_color()``` setzt dabei auch automatisch die Füllfarbe, da die ```opacity```allerdings standartmäßig auf 0 gesetzt ist muss dieser Wert angepasst werden. Die Farbe kann grundlegend mithilfe von Hex-Farbcodes angegeben werden, Manim stellt allerdings auch eine Menge an vordefinierten Konstanten zur verfügung. Hier wurde zum Beispiel die Konstante ```GREEN``` verwendet welche den Hex-Farbcode "#83C167" enthält. Eine Liste aller Farb-Konstanten gibt es [hier](https://docs.manim.community/en/stable/reference/manim.utils.color.Colors.html).
 
 Aus dem gezeigten Code ergibt sich nun folgendes:
+
 ![basicCircleWithColor](./mediaFiles/basicCircleWithColor.png)
 
 Als nächstes soll nun ein weiteres Objekt hinzugefügt werden. Mit folgendem Code wird ein Quadrat erstellt, die Farbe verändert und das Quadrat gedreht:
@@ -120,6 +122,7 @@ self.add(circle, square)
 ```
 
 Nun Ergibt sich folgendes:
+
 ![basicCircleAndSquare](./mediaFiles/basicCircleAndSquare.png)
 
 Das Quadrat wurde korrekt erstellt, befindet sich allerdings noch an der gleichen stelle im Bild wie der Kreis. Es gilt nun das Objekt zu Positionieren. Dazu gibt es in erster Linie drei Methoden die von nahezu allen Objekten in Manim angeboten werden:
@@ -178,6 +181,7 @@ self.add(circle, square, triangle, text)
 ```
 
 Das Bild sieht dann so aus:
+
 ![basicWithText](./mediaFiles/basicWithText.png)
 
 Nachdem nun die Positionierung von Objekten dargestellt wurde. Sollen noch zwei weitere Objekte kurz gezeigt werden: Linien und Pfeile zwischen Objekten.
