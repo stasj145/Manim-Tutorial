@@ -109,7 +109,7 @@ square.rotate(45*DEGREES)           #rotate square
 Das erstellen des Quadrats und das verändern der Farbe unterscheidet sich nun kaum vom Kreis zuvor. Natürlich wird nun nicht mehr die Klasse ```Circle()``` verwendet sondern eben ```Square()```. Zudem wird in der Methode ```set_fill()``` nun zusätzlich eine Farbe angegeben. Dadurch unterscheiden sich nun die Füllfarbe und die Farbe der Linie des Kreises. Um das Quadrat zu drehen kann die von ```VMobject``` geerbte Methode ```rotate()``` verwendet werden. ```rotate()``` akzeptiert Float-Werte der von PI abhängigen Einheit "Radiant" kurz "rad". Mithilfe der Konstante ```DEGREES``` können Grad-Werte in die entsprechenden Radiant-Werte umgerechnet werden.
 
 
-Um das neue Quadrat zum Bild hinzuzufügen gibt es zwei möglichkeite.
+Um das neue Quadrat zum Bild hinzuzufügen gibt es zwei Möglichkeiten:
 
 Hinzufügen mit eigenem add-Statement:
 ```python
