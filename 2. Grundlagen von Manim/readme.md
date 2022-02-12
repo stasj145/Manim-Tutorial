@@ -39,12 +39,12 @@ In der ```construct()``` Methode kann nun Code geschrieben werden um Objekte zu 
 
 In diesem Fall wird die Klasse ```Circle()``` verwendet um einen einfachen Kreis zu erzeugen. Ein erzeugtes Objekt wird allerdings nicht automatisch auch auf dem Bild angezeigt. Um Objecte dem Bild hinzuzufügen wird die Methode ```add()``` der Szenen-Klasse verwendet. Diese fügt statische Objekte dem Bild hinzu. Grundlegend ist nun eine sehr einfache Szene bereits fertig und kann gerendert werden. Da nur mit ```self.add()``` gearbeitet wurde wird nur ein einzelnes Bild und kein Video erzeugt. Insbesondere wenn das VS-Code Plugin "Manim Sideview" verwendet wird empfieht es sich allerdings immer Videos zu erstellen da "Manim Sideview" Probleme damit hat einzelne Bilder darzustellen. Zu diesem Zweg kann am Ende noch die Methode ```wait()``` verwendet werden. Mit ```wait()``` kann ganz einfach eine Wartezeit eingefügt werden. In diesem fall wird dadurch aus dem Bild nun ein Video mit der in  ```wait()``` angegebenen Länge.
 
-Aber wie genau wird aus dem Code nun ein Bild oder Video erzeugt? Um den Render-Vorgang zu starten wird eine Komandozeile benötigt. Um eine Szene zu Rendern wird grundlegend nur ein einfacher Befehl benötigt: ```manim pfad\zur\datei.py nameDerKlasse```. Vorrausgesetzt die Komandozeile befindet sich bereits im gleichen Ordner in dem die Pythondatei ligt sieht der Befehl für das Codebeispiel dann so aus: ```manim basics.py basic```. Die gerenderte Szene befindet sich nun in einem der folgenden Ordner:
+Aber wie genau wird aus dem Code nun ein Bild oder Video erzeugt? Um den Render-Vorgang zu starten wird eine Komandozeile benötigt. Um eine Szene zu Rendern wird grundlegend nur ein einfacher Befehl benötigt: ```manim pfad\zur\datei.py nameDerKlasse```. Vorrausgesetzt die Komandozeile befindet sich bereits im gleichen Ordner in dem die Pythondatei liegt sieht der Befehl für das Codebeispiel dann so aus: ```manim basics.py basic```. Die gerenderte Szene befindet sich nun in einem der folgenden Ordner:
 
 - Video: .\media\videos\\[NameDerSzene]\\[Auflösung]\ - in diesem Fall zum Beispiel: .\media\videos\basics\480p15\basic.mp4
 - Bild: .\\media\images\\[NameDerSzene]\ - in diesem Fall zum Beispiel: .\media\images\basics\basic_ManimCE_v0.14.0.png
 
-Verschiedene Aspekte des Renderprozesses können mithilfe von CLI Flags angepasst werden. Eine vollständige List aller möglichen Flags findet sich [hier](https://docs.manim.community/en/stable/tutorials/configuration.html). Einige wichtige CLI Flags sind folgdene:
+Verschiedene Aspekte des Renderprozesses können mithilfe von CLI Flags angepasst werden. Eine vollständige Liste aller möglichen Flags findet sich [hier](https://docs.manim.community/en/stable/tutorials/configuration.html). Einige wichtige CLI Flags sind folgdene:
 
 - ```--format``` - mögliche Optionen: png, gif, mp4, webm, mov
 - ```-q```, ```--quality``` - mögliche Optionen: 
@@ -64,6 +64,7 @@ Nachdem nun eine erste eigenen Szene erstellt wurde gibt es noch einige weitere 
 - Positionierung von Objekten
 
 Ziel ist die folgende Szene:
+
 ![fullSceneTwo](./mediaFiles/fullSceneTwo.png)
 
 
@@ -90,6 +91,7 @@ class basic(Scene):
 Die Klasse ```Circle()``` erbt von ```VMobject()``` und stellt damit unter anderem die Methoden ```set_color(color)``` und ```set_fill(color, opacity)``` zur verfügung. ```set_color()``` setzt dabei auch automatisch die Füllfarbe, da die ```opacity```allerdings standartmäßig auf 0 gesetzt ist muss dieser Wert angepasst werden. Die Farbe kann grundlegend mithilfe von Hex-Farbcodes angegeben werden, Manim stellt allerdings auch eine Menge an vordefinierten Konstanten zur verfügung. Hier wurde zum Beispiel die Konstante ```GREEN``` verwendet welche den Hex-Farbcode "#83C167" enthält. Eine Liste aller Farb-Konstanten gibt es [hier](https://docs.manim.community/en/stable/reference/manim.utils.color.Colors.html).
 
 Aus dem gezeigten Code ergibt sich nun folgendes:
+
 ![basicCircleWithColor](./mediaFiles/basicCircleWithColor.png)
 
 Als nächstes soll nun ein weiteres Objekt hinzugefügt werden. Mit folgendem Code wird ein Quadrat erstellt, die Farbe verändert und das Quadrat gedreht:
@@ -107,7 +109,7 @@ square.rotate(45*DEGREES)           #rotate square
 Das erstellen des Quadrats und das verändern der Farbe unterscheidet sich nun kaum vom Kreis zuvor. Natürlich wird nun nicht mehr die Klasse ```Circle()``` verwendet sondern eben ```Square()```. Zudem wird in der Methode ```set_fill()``` nun zusätzlich eine Farbe angegeben. Dadurch unterscheiden sich nun die Füllfarbe und die Farbe der Linie des Kreises. Um das Quadrat zu drehen kann die von ```VMobject``` geerbte Methode ```rotate()``` verwendet werden. ```rotate()``` akzeptiert Float-Werte der von PI abhängigen Einheit "Radiant" kurz "rad". Mithilfe der Konstante ```DEGREES``` können Grad-Werte in die entsprechenden Radiant-Werte umgerechnet werden.
 
 
-Um das neue Quadrat zum Bild hinzuzufügen gibt es zwei möglichkeite.
+Um das neue Quadrat zum Bild hinzuzufügen gibt es zwei Möglichkeiten:
 
 Hinzufügen mit eigenem add-Statement:
 ```python
@@ -120,6 +122,7 @@ self.add(circle, square)
 ```
 
 Nun Ergibt sich folgendes:
+
 ![basicCircleAndSquare](./mediaFiles/basicCircleAndSquare.png)
 
 Das Quadrat wurde korrekt erstellt, befindet sich allerdings noch an der gleichen stelle im Bild wie der Kreis. Es gilt nun das Objekt zu Positionieren. Dazu gibt es in erster Linie drei Methoden die von nahezu allen Objekten in Manim angeboten werden:
@@ -178,6 +181,7 @@ self.add(circle, square, triangle, text)
 ```
 
 Das Bild sieht dann so aus:
+
 ![basicWithText](./mediaFiles/basicWithText.png)
 
 Nachdem nun die Positionierung von Objekten dargestellt wurde. Sollen noch zwei weitere Objekte kurz gezeigt werden: Linien und Pfeile zwischen Objekten.
