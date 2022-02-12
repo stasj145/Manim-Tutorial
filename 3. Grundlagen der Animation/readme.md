@@ -171,4 +171,4 @@ self.play(MoveAlongPath(newDot, newCircle), run_time=6)
 self.play(newDot.animate.move_to(ORIGIN))
 ```
 
-Damit ist die Animation bereits fertig. Wie zu sehen ist sind die besten Ergebnisse zu erziehlen wenn alle drei möglichkeiten vermischt werden.
+Damit ist die Animation bereits fertig. Wie zu sehen ist sind die besten Ergebnisse zu erziehlen wenn alle drei möglichkeiten kombiniert werden.
