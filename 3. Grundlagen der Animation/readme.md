@@ -31,6 +31,7 @@ class basicAnimations(Scene):
         self.play(Uncreate(circle1))
 ```
 Damit ergibt sich bereits die erste einfache Animation:
+
 ![createUncreate](./mediaFiles/createUncreate.gif) 
 
 **Transform**
