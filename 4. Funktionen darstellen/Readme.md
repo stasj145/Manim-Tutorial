@@ -1,24 +1,24 @@
 # Funktionen darstellen
-Die möglichkeit mathematische Funktionen darzustellen ist ein wichtige bestantteil von Manim. Dementsprechend stehen eine vielzahl an Möglichkeiten zur verfügung alle möglichen Funktionen zu visualisieren. Dabei unterscheidet sich die darstallung von Funktionen von den Klassischen visualisierungen in Manim da hier vorallem auch die entsprechenden Funktionen definiert werden müssen. 
+Die Möglichkeit mathematische Funktionen darzustellen ist ein wichtige Bestantteil von Manim. Dementsprechend stehen eine Vielzahl an Möglichkeiten zur Verfügung alle möglichen Funktionen zu visualisieren. Dabei unterscheidet sich die Darstallung von Funktionen von den klassischen Visualisierungen in Manim da hier vor allem auch die entsprechenden Funktionen definiert werden müssen. 
 
-In diesem Teil des Tutorials soll Manim's möglichkeiten zu visualiesierung von Funktionen dargestellt werden. Dabei werden im speziellen drei Dinge besprochen:
+In diesem Teil des Tutorials soll Manim's möglichkeiten zur Visualiesierung von Funktionen dargestellt werden. Dabei werden im speziellen drei Dinge besprochen:
 1. Visualisierung von zweidimensionalen Funktionen in einem einfachen Koordinatensystem
 2. Darstellung von zweidimensionalen Funktionen in einem Koordinatensystem mit Kamerabewegungen
 3. Abbilden von dreidimensionalen Funktionen
 
-Mithilfe dieser drei Teile sollte es möglich sein die meisten Projekte umzusetzen die auf der darstellung von Funktionen basieren.
+Mithilfe dieser drei Teile sollte es möglich sein, die meisten Projekte umzusetzen, die auf der Darstellung von Funktionen basieren.
 
 ## 1. Visualisierung von zweidimensionalen Funktionen in einem einfachen Koordinatensystem
-In diesem Teil des Tutorials werden die Grundlagen für das Arbeiten mit Funktionen dargestellt. Dabei werden folgende bereiche behandelt:
-- erstellung eines Koordinatensystems
-- darstellung einer Funktion
+In diesem Teil des Tutorials werden die Grundlagen für das Arbeiten mit Funktionen dargestellt. Dabei werden folgende Bereiche behandelt:
+- Erstellung eines Koordinatensystems
+- Darstellung einer Funktion
 - Hervorheben/Markieren eines speziellen Punktes einer Funktion
 - Markieren eines von einer Funktion eingeschlossenen Bereichs
 
 Ziel ist es folgende Grafik zu erstellen:
 ![image7](mediaFiles/7.png)
 
-Als erstes macht es Sinn ein Koordinatensystem zu erzeugen in dem anschließend Gleichungen dargestellt werden können. Zu diesem Zweck kann die Funktion ```Axes()``` verwendet werden. Dabei sind die Übergabeparameter ```x_range``` und ```y_range``` entscheident um die größe des Koordinatensystems zu definieren. Ihnen wird jeweils ein Array nach dem schema ```[start, ende, intervall]``` zugeordnet. Mit diesem einfachen Code kann bereits ein einfaches Koordinatensystem erzeugt werden. 
+Als erstes macht es Sinn, ein Koordinatensystem zu erzeugen, in dem anschließend Gleichungen dargestellt werden können. Zu diesem Zweck kann die Klasse ```Axes()``` verwendet werden. Dabei sind die Übergabeparameter ```x_range``` und ```y_range``` entscheidend um die Größe des Koordinatensystems zu definieren. Ihnen wird jeweils ein Array nach dem Schema ```[start, ende, intervall]``` zugeordnet. Mit diesem einfachen Code kann bereits ein einfaches Koordinatensystem erzeugt werden. 
 ```python
 class twoDFuntion(Scene):
 
@@ -32,9 +32,9 @@ Das Koordinatenssystem sollte nun so aussehen:
 
 ![image1](./mediaFiles/1.png)
 
-So ist das Koordinatenssystem allerdings noch nicht wirklich zu gebrauchen. Im folgenden muss es Konfiguriert werden. Dazu stehen in erster Linie die folgenden drei Übergabeparameter bereit: ```axis_config```, ```x_axis_config```, ```y_axis_config```. Diesen parametern können dictionarys nach folgendem Schema zugeordnet werden ```{"Parameter": Value, "Parameter2": Value2, ...}```. Parameter die für beide Achsen gesetzt werden sollen könnnen mit ```axis_config``` konfiguriert werden. Mit ```x_axis_config``` und ```y_axis_config``` wird nur jeweils ein Achse verändert.
+So ist das Koordinatenssystem allerdings noch nicht wirklich zu gebrauchen. Im folgenden muss es konfiguriert werden. Dazu stehen in erster Linie die folgenden drei Übergabeparameter bereit: ```axis_config```, ```x_axis_config```, ```y_axis_config```. Diesen Parametern können Python-Dictionarys nach folgendem Schema zugeordnet werden ```{"Parameter": Value, "Parameter2": Value2, ...}```. Parameter die für beide Achsen gesetzt werden sollen, könnnen mit ```axis_config``` konfiguriert werden. Mit ```x_axis_config``` und ```y_axis_config``` wird jeweils nur eine Achse verändert.
 
-Eine vollständige Liste aller möglichen Parameter ist [hier](https://docs.manim.community/en/stable/reference/manim.mobject.number_line.NumberLine.html#manim.mobject.number_line.NumberLine) in der Manim-Dokumentation zu finden. Für uns sind hier allerdings nur eine wenige Parameter interessant. Erstens soll die Farbe des Koordinatensystems geändert werden, dazu wird der Parameter ```"color": BLUE``` definiert. Zweitens sollen die Achsen mit entsprechenden Zahlen beschriftet werden um das Koordinatensystem aussagekräftiger zu machen. Dafür wird der Parameter ```"numbers_to_include": [Iterable[float]]```  verwendet. Diesem kann beispielsweise ein Array mit Integern zugewiesen werden. Zur vereinfachung kann allerdings auch die Funktion ```arrange(min, max, interval)``` von numpy verwendet werden, diese erzeugt ein entsprechendes Array automatisch. Das könnte dan zum Beispiel so aussehen: ```y_axis_config={"numbers_to_include": np.arange(-1, 6)}```. Dabei ist wichtig zu wissen das die ```np.arrange()``` die obere Grenze nicht mit in das Array aufnimmt, diese sollte deshalb um 1 höher definiert werden als eigentlich benötigt. Die vollständige definition der Übergabeparameter sieht nun so aus:
+Eine vollständige Liste aller möglichen Parameter ist [hier](https://docs.manim.community/en/stable/reference/manim.mobject.number_line.NumberLine.html#manim.mobject.number_line.NumberLine) in der Manim-Dokumentation zu finden. Für uns sind nun allerdings nur einige wenige Parameter interessant. Erstens soll die Farbe des Koordinatensystems geändert werden, dazu wird der Parameter ```"color": BLUE``` definiert. Zweitens sollen die Achsen mit entsprechenden Zahlen beschriftet werden, um das Koordinatensystem aussagekräftiger zu machen. Dafür wird der Parameter ```"numbers_to_include": [Iterable[float]]```  verwendet. Diesem kann beispielsweise ein Array mit Integern zugewiesen werden. Zur Vereinfachung kann die Funktion ```arrange(min, max, interval)``` von numpy verwendet werden, diese erzeugt ein entsprechendes Array automatisch. Das könnte dan zum Beispiel so aussehen: ```y_axis_config={"numbers_to_include": np.arange(-1, 6)}```. Dabei ist wichtig zu wissen, dass ```np.arrange()``` die obere Grenze nicht mit in das Array aufnimmt, diese sollte deshalb um 1 höher definiert werden als eigentlich benötigt. Die vollständige Definition der Übergabeparameter sieht nun so aus:
 
 ```python
 axes = Axes(
@@ -45,26 +45,26 @@ axes = Axes(
     y_axis_config={"numbers_to_include": np.arange(-1, 6, 1)})
 ```
 
-Mit der gezeigten veränderung wurde nun auf der X-Achse die Beschrifung 10, 20, 30, 40, 50 hinzugefügt und auf der Y-Achse die Beschriftung 1, 2, 3, 4, 5. Auserdem wurden die Achsen Blau gefärbt. Dar auf der X-Achse nur in Zehnerschritten beschriftet wurde, wird hier noch ein weitere Parameter festgelegt. Mit ```"numbers_with_elongated_ticks": [Iterable[float]]``` können bestimmte Striche auf den Achsen hervorgehoben werden. Dies wird nun mit ```"numbers_with_elongated_ticks": np.arange(0, 51, 10)``` für alle Beschriftungen des X-Achse definiert.
+Mit der gezeigten Veränderung wurde nun auf der X-Achse die Beschrifung 10, 20, 30, 40, 50 hinzugefügt und auf der Y-Achse die Beschriftung 1, 2, 3, 4, 5. Außerdem wurden die Achsen blau gefärbt. Da auf der X-Achse nur in Zehnerschritten beschriftet wurde, wird hier noch ein weitere Parameter festgelegt. Mit ```"numbers_with_elongated_ticks": [Iterable[float]]``` können bestimmte Striche auf den Achsen hervorgehoben werden. Dies wird nun mit ```"numbers_with_elongated_ticks": np.arange(0, 51, 10)``` für alle Beschriftungen des X-Achse definiert.
 
 Das Koordinatensystem sieht nun wie folgt aus:
 
 ![image2](./mediaFiles/2.png)
 
-Nachdem nun das Koordinatensystem erstellt und konfiguriert wurde kann jetzt eine Gleichung darin dargestellt werden.
-Grundlegend wird dazu die Funktion ```plot()``` verwendet die Teil der des gerade erstellten Koordinatensystems ist. Dabei sind zwei Übergabeparameter entscheident. Einerseits muss die eigentliche Gleichung übergeben werden und andererseits die X-Werte für die die Gleichung berechnet werden soll. Die einfachste Methode dafür ist die Gleichung in-line als Lambda Funktion zu definieren. So zum Beispiel: ```lambda x: np.log(x)```. Die vollständige Definition des Graphen für die Gleichung "f(x) = log(x)" sieht damit beispielsweise so aus:
+Nachdem nun das Koordinatensystem erstellt und konfiguriert wurde, kann jetzt eine Gleichung darin dargestellt werden.
+Grundlegend wird dazu die Funktion ```plot()``` verwendet, die Teil der des gerade erstellten Koordinatensystems ist. Dabei sind zwei Übergabeparameter entscheidend. Einerseits muss die eigentliche Gleichung übergeben werden und andererseits die X-Werte für die die Gleichung berechnet werden soll. Die einfachste Methode dafür ist die Gleichung in-line als Lambda Funktion zu definieren. So zum Beispiel: ```lambda x: np.log(x)```. Die vollständige Definition des Graphen für die Gleichung "f(x) = log(x)" sieht damit beispielsweise so aus:
 
 ```python
 logGraph = axes.plot(lambda x: np.log(x), x_range=[0.1, 51], color=RED)
 ```
 
-Wichtig ist hier das die X-Werte erst ab 0.1 beginnen da log(0) nicNt definiert ist. Wird dieser Code ausgeführt erhält man folgends Ergebniss:
+Wichtig ist hier das die X-Werte erst ab 0.1 beginnen da log(0) nicht definiert ist. Wird dieser Code ausgeführt erhält man folgends Ergebniss:
 
 ![image3](mediaFiles/3.png)
 
-Mit dieser Methode ist es möglich sehr einfach Gleichungen darzustellen. Allerdings bietet diese Methode auch nachteile. So kann die Gleichung nicht dierekt weiterverwendet werden und ist auch nicht leich austauschbar, außerdem wird es bei längeren Gleichungen schnell unübersichtlich. Diese Methode bietet sich an wenn es sich um einfache Gleichungen handelt bei denen bereits vorher klar ist dass mit der Gleichung nicht mehr weiter gearbeitet werden muss.
+Mit dieser Methode ist es möglich, sehr einfach Gleichungen darzustellen. Allerdings bietet diese Methode auch Nachteile. So kann die Gleichung nicht direkt weiterverwendet werden und ist auch nicht leicht austauschbar, außerdem wird es bei längeren Gleichungen schnell unübersichtlich. Diese Methode bietet sich an, wenn es sich um einfache Gleichungen handelt bei denen bereits vorher klar ist, dass mit der Gleichung nicht mehr weiter gearbeitet werden muss.
 
-Deutlich vielseitiger ist die Definition der Gleichung als eigene Funktion im Code. Im folgenden soll nun mit dieser Methode zusätzlich die Gleichung "g(x) = (x-25)<sup>2</sup>" dargestellt werden. Dazu wird zuerst die Gleichung als Funktion definiert.
+Deutlich vielseitiger ist die Definition der Gleichung als eigene Funktion im Code. Im Folgenden soll nun mit dieser Methode zusätzlich die Gleichung "g(x) = (x-25)<sup>2</sup>" dargestellt werden. Dazu wird zuerst die Gleichung als Funktion definiert.
 
 ```python
 def powerOf2(x):
@@ -80,9 +80,9 @@ Mithilfe dieses Codes sieht die Grafig nun so aus:
 
 ![image4](mediaFiles/4.png)
 
-Die verwendung dieser Methode ist deutlich vielsseitiger und übersichtlicher, allerdings auch etwas aufwendiger. Die Wahl der besten Methode für die Definition von Gleichungen ist immer von der jeweiligen Situation abhängig.
+Die Verwendung dieser Methode ist deutlich vielseitiger und übersichtlicher, allerdings auch etwas aufwendiger. Die Wahl der besten Methode für die Definition von Gleichungen ist immer von der jeweiligen Situation abhängig.
 
-Nachdem nun die Grundlagen für das Visualisieren von Gleichungen dargestellt wurde soll nun ein bestimter Punkt auf dem Roten Graphen Markiert werden genaugenommen der Punkt "f(25)". Dazu bieteten Koordinatensysteme zum Beispiel die Funktion ```get_lines_to_point()``` der Koordinaten übergeben werden müssen. Um diese Funktion nutze zu können müssen nun allerdings erst die Koordinaten gefunden werden indem "f(25)" berechnet wird. Da wir die Gleichung bereits dargestellt und berechnet haben kann über ```cords = axes.input_to_graph_point(x, graph)``` auf die Ergebnissse zugegriffen werden. Die damit gefundenen Koordinaten werden schließlich in ```get_lines_to_point(cords)``` eingesetzt. In umserem Beispiel sieht das dann so aus:
+Nachdem nun die Grundlagen für das Visualisieren von Gleichungen dargestellt wurde, soll nun ein bestimter Punkt auf dem Roten Graphen markiert werden, genaugenommen der Punkt "f(25)". Dazu bieten Koordinatensysteme zum Beispiel die Funktion ```get_lines_to_point()``` welcher Koordinaten übergeben werden müssen. Um diese Funktion nutzen zu können, müssen nun allerdings erst die Koordinaten gefunden werden, indem "f(25)" berechnet wird. Da wir die Gleichung bereits dargestellt und berechnet haben, kann über ```cords = axes.input_to_graph_point(x, graph)``` auf die Ergebnissse zugegriffen werden. Die damit gefundenen Koordinaten werden schließlich in ```get_lines_to_point(cords)``` eingesetzt. In umserem Beispiel sieht das dann so aus:
 ```python
 logGraph = axes.plot(lambda x: np.log(x), x_range=[0.1, 51], color=RED)
 
@@ -93,7 +93,7 @@ Das Ergebniss ist dann Folgendes:
 
 ![image5](mediaFiles/5.png)
 
-Zu guterletzt soll nun noch der Bereich zwischen den beiden Funktionen herrvorgehoben werden. Prinzipiel gibt es dafür die Funktion ```axes.get_area(graph1, bounded_graph=graph2)```. Eine naive implementierung dieser Funktion sehe dann so aus: 
+Zum Schluss soll nun noch der Bereich zwischen den beiden Funktionen herrvorgehoben werden. Prinzipiell gibt es dafür die Funktion ```axes.get_area(graph1, bounded_graph=graph2)```. Eine naive mplementierung dieser Funktion sehe dann so aus: 
 ```
 area = axes.get_area(powerOf2Graph, bounded_graph=logGraph)
 ```
@@ -101,7 +101,7 @@ Dies liefert folgendes Ergebniss:
 
 ![image6](mediaFiles/6.png)
 
-Prinzipiell Funktioniert das gut, aber was nun wenn nur der Bereich unter dem roten Graphen hervorgehoben werden soll? Dazu kann der ```axes.get_area()``` Funktion ein Parameter ```x_range=[min, max]``` übergeben werden. Das finden der Schnittpunkte übernimmt Manim leider nicht. Eine eigene Implementierung ist allerdings nicht besondres schwierig und kann zum Beispiel mit der Funktion ```fsolve``` aus der Bibliothek ```scipy.optimize``` durchgeführt werden. 
+Prinzipiell funktioniert das gut, aber was nun, wenn nur der Bereich unter dem roten Graphen hervorgehoben werden soll? Dazu kann der ```axes.get_area()``` Funktion ein Parameter ```x_range=[min, max]``` übergeben werden. Das finden der Schnittpunkte übernimmt Manim leider nicht. Eine eigene Implementierung ist allerdings nicht besondres schwierig und kann zum Beispiel mit der Funktion ```fsolve``` aus der Bibliothek ```scipy.optimize``` durchgeführt werden. 
 
 So zum Beispiel:
 
@@ -115,9 +115,9 @@ firstIntersectX = findIntersection(powerOf2, np.log, 23)
 secondIntersectX = findIntersection(powerOf2, np.log, 26)
 ```
 
-Dies ist eine Recht einfache Umsetztung der gebrauchten Funktionalität die immer nur den nächsten Schnittpunkt, basierend auf einem übergebenen Schätzwert, liefert. Eine Vollautomatisierung ist damit nicht gegeben, für unsere Zwecke reicht es allerdings vollkommen aus. Dabei ist hier der zuvor angesprochene Vorteil einer Definition der Gleichungen als eigene Funktion zu sehen. Während die Gleichung "g(x) = (x-25)<sup>2</sup>" einfach wieder mit einem Funktionpointer übergeben werden kann muss die Gleichung "f(x) = log(x)" mit ```np.log``` neu definiert werden.
+Dies ist eine recht einfache Umsetztung der gebrauchten Funktionalität, die immer nur den nächsten Schnittpunkt, basierend auf einem übergebenen Schätzwert, liefert. Eine Vollautomatisierung ist damit nicht gegeben, für unsere Zwecke reicht es allerdings vollkommen aus. Dabei ist hier der zuvor angesprochene Vorteil einer Definition der Gleichungen als eigene Funktion zu sehen. Während die Gleichung "g(x) = (x-25)<sup>2</sup>" einfach wieder mit einem Funktionpointer übergeben werden kann muss die Gleichung "f(x) = log(x)" mit ```np.log``` neu definiert werden.
 
-Nun muss nurnoch der ```x_range``` Parameter mit den gefundenen Schnittpunkten festgelegt werden:
+Nun muss nur noch der ```x_range``` Parameter mit den gefundenen Schnittpunkten festgelegt werden:
 ```python
 area = axes.get_area(powerOf2Graph, bounded_graph=logGraph, x_range=[firstIntersectX, secondIntersectX], color=GREY)
 ```
@@ -127,11 +127,11 @@ area = axes.get_area(powerOf2Graph, bounded_graph=logGraph, x_range=[firstInters
 Damit ist nun das Ziel des ersten Teils erreicht und die Grundlagen der Visualisierung von Gleichungen klar. Der vollständige Code für das Erzeugen der Grafik findet sich in der Datei "2dFuntion.py".
 
 ## 2. Darstellung von zweidimensionalen Funktionen in einem Koordinatensystem mit Kamerabewegungen
-In diesem zweiten Teil des Tutorials soll es in erster Linie um die Implementierung von Kamerabewegungen gehen Ziel ist es das folgende Video zu erstellen:
+In diesem zweiten Teil des Tutorials soll es in erster Linie um die Implementierung von Kamerabewegungen gehen. Ziel ist es das folgende Video zu erstellen:
 
 ![video1](mediaFiles/twoDFuntionWithPlane.gif)
 
-Die erstellung des Koordinatensystem unterscheidet sich kaum vom ersten Teil:
+Die Erstellung des Koordinatensystems unterscheidet sich kaum vom ersten Teil:
 
 ```python
 plane = NumberPlane(
@@ -142,7 +142,7 @@ plane = NumberPlane(
     y_axis_config={"numbers_to_include": np.arange(-5, 6, 1)})
 ```
 
-Anstatt der ```Axis()``` Klasse wird nun allerding ein ```NumberPlane()``` erstellt. Diese bietet eine etwas andere Visualisierung unterscheidet sich sonst aber nur wenig von dem ersten Beispiel.
+Anstatt der ```Axis()``` Klasse wird nun allerding ein ```NumberPlane()``` erstellt. Diese bietet eine etwas andere Visualisierung, unterscheidet sich sonst aber nur wenig von dem ersten Beispiel.
 
 Auch die Implementierung der Funktionen läuft ab wie zuvor:
 
@@ -154,11 +154,11 @@ cosGraph = plane.plot(lambda x: np.cos(x), color=TEAL)
 Und sieht dann wie folgt aus:
 ![plane1](mediaFiles/plane1.png)
 
-Der neue Teil ist in erster Linie die Bewegung der Kamera zur Fokusierung auf verschiedenen Teile der Grafik. Das ist prinzipiel recht einfach aber es müssen einige Dinge beachtet werden. Einerseits muss die Klassen signatur angepasst werden. 
+Der neue Teil ist in erster Linie die Bewegung der Kamera zur Fokusierung auf verschiedene Teile der Grafik. Das ist prinzipiel recht einfach, aber es müssen einige Dinge beachtet werden. Einerseits muss die Klassensignatur angepasst werden. 
 
 Statt einer normalen "Scene" wird nun eine "MovingCameraScene" verwendet:
 ```python
-class twoDFuntion(Scene):
+class twoDFuntionWithPlane(Scene):
 ``` 
 
 wird zu 
@@ -167,7 +167,7 @@ wird zu
 class twoDFuntionWithPlane(MovingCameraScene):
 ```
 
-Durch diese Veränderung kann man über ```self.camera.frame``` auf die Kamera zugreifen. Speziell steht unter ```self.camera.frame.animate``` die Möglichkeit der Animation der Kamera bereit. Zur Bewegung können die Klassischen Bewegungsfunktionen wie ```move_to()``` oder ```shift()``` verwendet werden. Um rein- oder raus zu Zoomen kann Beispielsweise folgende Funktion genutzt werden: ```set(width=neueWidth)```. Zusätzlich ist es möglich mit ```self.camera.frame.save_state()``` eine Kameraeinstellung zu speichern und mit ```self.play(Restore(self.camera.frame))``` wiederherzustellen. Mit diesen einfachen Befehelen kann die Kammera in einer vielzahl an Wegen über das Koordinatensystem bewegt werden.
+Durch diese Veränderung kann man über ```self.camera.frame``` auf die Kamera zugreifen. Speziell steht unter ```self.camera.frame.animate``` die Möglichkeit der Animation der Kamera bereit. Zur Bewegung können die klassischen Bewegungsfunktionen wie ```move_to()``` oder ```shift()``` verwendet werden. Um rein- oder raus zu zoomen, kann Beispielsweise folgende Funktion genutzt werden: ```set(width=neueWidth)```. Zusätzlich ist es möglich mit ```self.camera.frame.save_state()``` eine Kameraeinstellung zu speichern und mit ```self.play(Restore(self.camera.frame))``` wiederherzustellen. Mit diesen einfachen Befehlen kann die Kamera in einer Vielzahl an Wegen über das Koordinatensystem bewegt werden.
 
 Die Animation vom Anfang wird zu Beispiel so erzeugt:
 
@@ -195,15 +195,15 @@ self.play(self.camera.frame.animate.set(width=plane.width*2))
 #Kamera zurücksetzen
 self.play(Restore(self.camera.frame))
 ```
-Der Vollständige Code findet sich in der Datei "2dFunctionWithPlane.py".
+Der vollständige Code findet sich in der Datei ```2dFunctionWithPlane.py```.
 
 ## 3. Abbilden von dreidimensionalen Funktionen
-Auch dreidimensionalen Funktionen können Problemlos mit Manim dargestellt werden. Der Ablauf unterscheidet sich dabei nur kaum von der Visualisierung zweidimensionaler Funktionen.
+Auch dreidimensionale Funktionen können problemlos mit Manim dargestellt werden. Der Ablauf unterscheidet sich dabei nur kaum von der Visualisierung zweidimensionaler Funktionen.
 
-Erstellt werden soll die folgende Grafik welche die Gleichung "f(x, y) = sin(x)*cos(y)" visualisiert:
+Erstellt werden soll die folgende Grafik, welche die Gleichung "f(x, y) = sin(x)*cos(y)" visualisiert:
 ![3dImage3](mediaFiles/3d3.png)
 
-Ähnlich wie schon in Teil zwei muss die Klassensignatur angepasst werden. Es wird nun eine ```ThreeDScene``` verwendet
+Ähnlich wie schon in Teil 2 muss die Klassensignatur angepasst werden. Es wird nun eine ```ThreeDScene``` verwendet.
 
 ```python
 class twoDFuntion(Scene):
@@ -222,10 +222,10 @@ axes = ThreeDAxes(
     z_range=[-10, 10, 1],
     axis_config={"color": RED, "numbers_to_include": np.arange(-10, 11, 1), "include_tip": False, "font_size": 20})
 ```
-Wie zu sehen ist lauft die gleich ab wie zuvor, mit dem einen Unterschied das es jetzt natürlich noch einen Z-Achse gibt.
+Wie zu sehen ist, lauft dies gleich ab wie zuvor, mit dem einen Unterschied, dass es jetzt natürlich noch einen Z-Achse gibt.
 ![3dImage1](mediaFiles/3d1.png)
 
-Um das Ergebniss besser sehen zu können wird die Kamera gedreht:
+Um das Ergebniss besser sehen zu können wird die Kamera mit ```set_camera_orientation()```gedreht:
 ```python
 self.set_camera_orientation(phi=45*DEGREES, theta=45*DEGREES)
 ```
@@ -239,14 +239,14 @@ def threeDFunc(u, v):
     return np.array([u, v, z])
 ```
 
-Der hauptsächliche Unterschied zu den zweidimensionalen Funktionen zeigt sich im nächsten schritt. Um die Gleichung darzustellen muss ein ```Surface()``` erstellt werden. Dazu wird dem Konstruktor der Klasse die Gleichungsfunktion sowie eine u_range (x) und eine v_range (y) übergeben:
+Der hauptsächliche Unterschied zu den zweidimensionalen Funktionen zeigt sich im nächsten Schritt. Um die Gleichung darzustellen muss ein ```Surface()``` erstellt werden. Dazu wird dem Konstruktor der Klasse die Gleichungsfunktion sowie eine u_range (x) und eine v_range (y) übergeben:
 
 ```python
 graph = Surface(threeDFunc, u_range=[-5, 5], v_range=[-5, 5], fill_opacity=0.5)
 ```
 
-Zur besseren Darstellung wird die Obefläsche außerdem mit ```fill_opacity=0.5``` Transparent gemacht.
+Zur besseren Darstellung wird die Obefläsche außerdem mit ```fill_opacity=0.5``` transparent gemacht.
 
 ![3dImage3](mediaFiles/3d3.png)
 
-Wie zu sehen ist, ist auch die Darstellung von dreidimensionalen Funktionen nicht schwierig und kann problemlos mit wenigen Codezeilen umgesetzt werden. Der komplete Code zum Vergleich ist in der Datei "3dFunction.py" zu finden.
+Wie zu sehen ist, ist auch die Darstellung von dreidimensionalen Funktionen nicht schwierig und kann problemlos mit wenigen Codezeilen umgesetzt werden. Der komplette Code zum Vergleich ist in der Datei ```3dFunction.py``` zu finden.
