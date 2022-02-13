@@ -31,6 +31,7 @@ class basicAnimations(Scene):
         self.play(Uncreate(circle1))
 ```
 Damit ergibt sich bereits die erste einfache Animation:
+
 ![createUncreate](./mediaFiles/createUncreate.gif) 
 
 **Transform**
@@ -170,4 +171,8 @@ self.play(MoveAlongPath(newDot, newCircle), run_time=6)
 self.play(newDot.animate.move_to(ORIGIN))
 ```
 
+<<<<<<< HEAD
 Damit ist die Animation bereits fertig. Wie zu sehen ist sind die besten Ergebnisse zu erzielen wenn alle drei Möglichkeiten vermischt werden.
+=======
+Damit ist die Animation bereits fertig. Wie zu sehen ist sind die besten Ergebnisse zu erziehlen wenn alle drei möglichkeiten kombiniert werden.
+>>>>>>> 8692b2a7bfe67466225cf45e43edf575e73296b2
